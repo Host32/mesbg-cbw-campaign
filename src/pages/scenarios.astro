@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const scenarios = [
+	{ id: 1, name: "FARMER MAGGOT'S CROP", chapter: "The Shire" },
+	{ id: 2, name: "SHORT CUTS MAKE LONG DELAYS", chapter: "The Shire" },
+	{ id: 3, name: "BUCKLEBERRY FERRY", chapter: "The Shire" },
+	{ id: 4, name: "CRICKHOLLOW", chapter: "The Shire" },
+	{ id: 5, name: "THE OLD FOREST", chapter: "The Old Forest" },
+	{ id: 6, name: "FOG ON THE BARROW-DOWNS", chapter: "The Old Forest" },
+	{ id: 7, name: "HOUSE OF TOM BOMBADIL", chapter: "The Old Forest" },
+	{ id: 8, name: "NAZGÛL IN BREE", chapter: "The Journey to Rivendell" },
+	{ id: 9, name: "WEATHERTOP", chapter: "The Journey to Rivendell" },
+	{ id: 10, name: "FLIGHT TO THE FORD", chapter: "The Journey to Rivendell" },
+	{ id: 11, name: "RIVENDELL", chapter: "Rivendell" },
+	{ id: 12, name: "WARGS IN THE NIGHT", chapter: "The Journey through Moria" },
+	{ id: 13, name: "THE GATES OF MORIA", chapter: "The Journey through Moria" },
+	{ id: 14, name: "BALIN'S TOMB", chapter: "The Journey through Moria" },
+	{ id: 15, name: "ESCAPE FROM DWARROWDELF", chapter: "The Journey through Moria" },
+	{ id: 16, name: "THE BRIDGE OF KHAZAD-DÛM", chapter: "The Journey through Moria" },
+	{ id: 17, name: "LOTHLÓRIEN", chapter: "Lothlórien" },
+	{ id: 18, name: "REST IN LOTHLÓRIEN", chapter: "Lothlórien" },
+	{ id: 19, name: "ARAGORN'S STAND", chapter: "The Breaking of the Fellowship" },
+	{ id: 20, name: "BOROMIR'S REDEMPTION", chapter: "The Breaking of the Fellowship" },
+	{ id: 21, name: "BREAKING OF THE FELLOWSHIP", chapter: "The Breaking of the Fellowship" },
+	{ id: 22, name: "AMBUSH AT AMON HEN", chapter: "The Breaking of the Fellowship" },
+	{ id: 23, name: "AMBUSH AT NIGHT", chapter: "The Hunt for the Hobbits" },
+	{ id: 24, name: "THE WHITE WIZARD", chapter: "The Hunt for the Hobbits" },
+	{ id: 25, name: "WARG ATTACK", chapter: "The Hunt for the Hobbits" },
+	{ id: 26, name: "HELM'S DEEP", chapter: "Helm's Deep" },
+	{ id: 27, name: "RAISE THE LADDERS", chapter: "Helm's Deep" },
+	{ id: 28, name: "THE WALLS OF HELM'S DEEP", chapter: "Helm's Deep" },
+	{ id: 29, name: "PLANT THE CHARGES", chapter: "Helm's Deep" },
+	{ id: 30, name: "THE DEEPING WALL IS BREACHED", chapter: "Helm's Deep" },
+	{ id: 31, name: "RETREAT TO THE HORNBURG", chapter: "Helm's Deep" },
+	{ id: 32, name: "THE CAUSEWAY", chapter: "Helm's Deep" },
+	{ id: 33, name: "FALL BACK TO THE KEEP", chapter: "Helm's Deep" },
+	{ id: 34, name: "RIDE OUT", chapter: "Helm's Deep" },
+	{ id: 35, name: "ÉOMER'S RETURN", chapter: "Helm's Deep" },
+	{ id: 36, name: "LAST MARCH OF THE ENTS", chapter: "Isengard" },
+	{ id: 37, name: "THE TAMING OF SMÉAGOL", chapter: "The Journey to Mordor" },
+	{ id: 38, name: "THE DEAD MARSHES", chapter: "The Journey to Mordor" },
+	{ id: 39, name: "AMBUSH IN ITHILIEN", chapter: "The Journey to Mordor" },
+	{ id: 40, name: "ITHILIEN", chapter: "The Journey to Mordor" },
+	{ id: 41, name: "OSGILIATH", chapter: "The Journey to Mordor" },
+	{ id: 42, name: "SHELOB'S LAIR", chapter: "The Journey to Mordor" },
+	{ id: 43, name: "CIRITH UNGOL", chapter: "The Journey to Mordor" },
+	{ id: 44, name: "MINAS TIRITH", chapter: "The Siege of Gondor" },
+	{ id: 45, name: "THE WHITE RIDER", chapter: "The Siege of Gondor" },
+	{ id: 46, name: "FARAMIR'S CHARGE", chapter: "The Siege of Gondor" },
+	{ id: 47, name: "ATOP THE WALLS", chapter: "The Siege of Gondor" },
+	{ id: 48, name: "THE GATE IS BREACHED", chapter: "The Siege of Gondor" },
+	{ id: 49, name: "THE STREETS OF MINAS TIRITH", chapter: "The Siege of Gondor" },
+	{ id: 50, name: "THE WITCH-KING'S ARRIVAL", chapter: "The Siege of Gondor" },
+	{ id: 51, name: "EDORAS", chapter: "The Battle of Pelennor Fields" },
+	{ id: 52, name: "CHARGE OF THE ROHIRRIM", chapter: "The Battle of Pelennor Fields" },
+	{ id: 53, name: "DENETHOR'S MADNESS", chapter: "The Battle of Pelennor Fields" },
+	{ id: 54, name: "WAR BEASTS FROM THE SOUTH", chapter: "The Battle of Pelennor Fields" },
+	{ id: 55, name: "THE HORSE AND THE SERPENT", chapter: "The Battle of Pelennor Fields" },
+	{ id: 56, name: "DEATH OF THE KING", chapter: "The Battle of Pelennor Fields" },
+	{ id: 57, name: "FINAL FATE OF THE WITCH-KING", chapter: "The Battle of Pelennor Fields" },
+	{ id: 58, name: "PELARGIR", chapter: "The Grey Company" },
+	{ id: 59, name: "THE BATTLE FOR PELARGIR", chapter: "The Grey Company" },
+	{ id: 60, name: "THE DOCKS OF HARLOND", chapter: "The Grey Company" },
+	{ id: 61, name: "MINAS TIRITH", chapter: "The Grey Company" },
+	{ id: 62, name: "THE BLACK GATE", chapter: "The March on the Black Gate" },
+	{ id: 63, name: "PLATEAU OF GORGOROTH", chapter: "Mount Doom" },
+	{ id: 64, name: "THE END OF ALL THINGS", chapter: "Mount Doom" }
+];
+
+const chapterGroups = scenarios.reduce((acc, scenario) => {
+	if (!acc[scenario.chapter]) {
+		acc[scenario.chapter] = [];
+	}
+	acc[scenario.chapter].push(scenario);
+	return acc;
+}, {} as Record<string, typeof scenarios>);
+---
+
+<Layout title="Campaign Scenarios">
+	<main>
+		<header class="page-header">
+			<a href="/" class="back-link">← Back to Home</a>
+			<h1>Campaign Scenarios</h1>
+			<p>69 scenarios following the Quest of the Ringbearer</p>
+		</header>
+
+		<div class="scenarios-container">
+			{Object.entries(chapterGroups).map(([chapter, chapterScenarios]) => (
+				<section class="chapter-section">
+					<h2 class="chapter-title">{chapter}</h2>
+					<div class="scenario-list">
+						{chapterScenarios.map((scenario) => (
+							<div class="scenario-card">
+								<span class="scenario-number">{scenario.id}</span>
+								<span class="scenario-name">{scenario.name}</span>
+							</div>
+						))}
+					</div>
+				</section>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.back-link {
+		display: inline-block;
+		color: #8b6f47;
+		text-decoration: none;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		transition: color 0.2s;
+	}
+
+	.back-link:hover {
+		color: #6b5537;
+	}
+
+	.page-header h1 {
+		font-size: 2.5rem;
+		color: #2d5016;
+		margin: 0.5rem 0;
+	}
+
+	.page-header p {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.scenarios-container {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.chapter-section {
+		background: white;
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.chapter-title {
+		color: #2d5016;
+		font-size: 1.75rem;
+		margin: 0 0 1.5rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 3px solid #8b6f47;
+	}
+
+	.scenario-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 1rem;
+	}
+
+	.scenario-card {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem;
+		background: #f9f7f4;
+		border-radius: 6px;
+		border-left: 4px solid #8b6f47;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.scenario-card:hover {
+		transform: translateX(4px);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.scenario-number {
+		flex-shrink: 0;
+		width: 36px;
+		height: 36px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(135deg, #8b6f47 0%, #a68b5b 100%);
+		color: #f4e4c1;
+		border-radius: 50%;
+		font-weight: 700;
+		font-size: 0.9rem;
+	}
+
+	.scenario-name {
+		color: #333;
+		font-weight: 600;
+		font-size: 0.95rem;
+		letter-spacing: 0.5px;
+	}
+
+	@media (max-width: 768px) {
+		.page-header h1 {
+			font-size: 2rem;
+		}
+
+		.scenario-list {
+			grid-template-columns: 1fr;
+		}
+
+		.chapter-section {
+			padding: 1.5rem;
+		}
+	}
+</style>

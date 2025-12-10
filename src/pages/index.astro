@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Quest of the Ringbearer Campaign">
+	<main>
+		<header class="hero">
+			<h1>Quest of the Ringbearer</h1>
+			<p class="subtitle">Middle Earth Strategy Battle Game Co-op Campaign</p>
+			<p class="club-name">Minas Gerais Wargames Club</p>
+		</header>
+
+		<section class="intro">
+			<h2>About the Campaign</h2>
+			<p>
+				Join us on an epic journey through Middle-earth as we relive the Quest of the Ringbearer.
+				Each month, we gather to play narrative scenarios that follow the Fellowship's perilous path
+				from the Shire to Mount Doom.
+			</p>
+			<p>
+				Players take on the roles of heroes in each scenario, with outcomes affecting future battles.
+				Injuries, experience points, and victory rewards are tracked throughout the campaign. Choose
+				different heroes each session to experience the full breadth of the story.
+			</p>
+		</section>
+
+		<section class="schedule">
+			<h2>Campaign Information</h2>
+			<div class="info-grid">
+				<div class="info-card">
+					<h3>Frequency</h3>
+					<p>Once per month</p>
+				</div>
+				<div class="info-card">
+					<h3>Next Session</h3>
+					<p>Thursday - Farmer Maggot's Crop</p>
+				</div>
+				<div class="info-card">
+					<h3>Total Scenarios</h3>
+					<p>69 epic battles</p>
+				</div>
+			</div>
+		</section>
+
+		<nav class="main-nav">
+			<a href="/scenarios" class="nav-button">View All Scenarios</a>
+			<a href="/timeline" class="nav-button">Campaign Timeline</a>
+		</nav>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+	}
+
+	.hero {
+		text-align: center;
+		padding: 3rem 1rem;
+		background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+		color: #f4e4c1;
+		border-radius: 12px;
+		margin-bottom: 3rem;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	.hero h1 {
+		font-size: 3rem;
+		margin: 0 0 0.5rem;
+		font-weight: 700;
+		letter-spacing: 2px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	}
+
+	.subtitle {
+		font-size: 1.25rem;
+		margin: 0 0 0.5rem;
+		color: #d4c4a1;
+	}
+
+	.club-name {
+		font-size: 1rem;
+		margin: 0;
+		color: #c4b491;
+		font-style: italic;
+	}
+
+	.intro {
+		background: #f9f7f4;
+		padding: 2rem;
+		border-radius: 8px;
+		border-left: 4px solid #8b6f47;
+		margin-bottom: 3rem;
+	}
+
+	.intro h2 {
+		color: #2d5016;
+		margin-top: 0;
+	}
+
+	.intro p {
+		line-height: 1.7;
+		color: #4a4a4a;
+	}
+
+	.schedule {
+		margin-bottom: 3rem;
+	}
+
+	.schedule h2 {
+		color: #2d5016;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.info-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.info-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		text-align: center;
+		border-top: 3px solid #8b6f47;
+	}
+
+	.info-card h3 {
+		color: #2d5016;
+		margin: 0 0 0.5rem;
+		font-size: 1.25rem;
+	}
+
+	.info-card p {
+		color: #666;
+		margin: 0;
+		font-size: 1.1rem;
+	}
+
+	.main-nav {
+		display: flex;
+		gap: 1.5rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.nav-button {
+		display: inline-block;
+		padding: 1rem 2rem;
+		background: linear-gradient(135deg, #8b6f47 0%, #a68b5b 100%);
+		color: #f4e4c1;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 600;
+		font-size: 1.1rem;
+		transition: transform 0.2s, box-shadow 0.2s;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.nav-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2rem;
+		}
+
+		.subtitle {
+			font-size: 1rem;
+		}
+
+		.intro {
+			padding: 1.5rem;
+		}
+	}
+</style>

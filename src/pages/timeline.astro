@@ -1,0 +1,278 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Campaign Timeline">
+	<main>
+		<header class="page-header">
+			<a href="/" class="back-link">← Back to Home</a>
+			<h1>Campaign Timeline</h1>
+			<p>Track our journey through Middle-earth</p>
+		</header>
+
+		<div class="timeline-container">
+			<div class="instructions">
+				<h3>How to Update This Timeline</h3>
+				<p>
+					After each session, edit this file (<code>src/pages/timeline.astro</code>) and add a new
+					timeline entry in the section below. Copy the example format and fill in your session details.
+				</p>
+			</div>
+
+			<div class="timeline">
+				<div class="timeline-item completed">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Session 1 - Farmer Maggot's Crop</h3>
+							<span class="date">December 12, 2025</span>
+						</div>
+						<div class="session-details">
+							<div class="heroes">
+								<h4>Heroes</h4>
+								<ul>
+									<li>Player Name - Hero Name (Status)</li>
+								</ul>
+							</div>
+							<div class="outcome">
+								<h4>Outcome</h4>
+								<p>Victory/Defeat - Brief description of what happened in the scenario.</p>
+							</div>
+							<div class="rewards">
+								<h4>Rewards & Injuries</h4>
+								<ul>
+									<li>Player earned X points</li>
+									<li>Hero suffered Y injury</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item upcoming">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Session 2 - Short Cuts Make Long Delays</h3>
+							<span class="date">January 2026</span>
+						</div>
+						<div class="session-details">
+							<p class="upcoming-text">Upcoming scenario</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 2rem 1rem 4rem;
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.back-link {
+		display: inline-block;
+		color: #8b6f47;
+		text-decoration: none;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		transition: color 0.2s;
+	}
+
+	.back-link:hover {
+		color: #6b5537;
+	}
+
+	.page-header h1 {
+		font-size: 2.5rem;
+		color: #2d5016;
+		margin: 0.5rem 0;
+	}
+
+	.page-header p {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.timeline-container {
+		background: white;
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.instructions {
+		background: #fff8e1;
+		border: 2px solid #f9d84a;
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.instructions h3 {
+		margin-top: 0;
+		color: #8b6f47;
+		font-size: 1.25rem;
+	}
+
+	.instructions p {
+		margin-bottom: 0;
+		color: #666;
+	}
+
+	.instructions code {
+		background: rgba(0, 0, 0, 0.05);
+		padding: 2px 6px;
+		border-radius: 4px;
+		font-family: monospace;
+	}
+
+	.timeline {
+		position: relative;
+		padding-left: 3rem;
+	}
+
+	.timeline::before {
+		content: '';
+		position: absolute;
+		left: 1rem;
+		top: 0;
+		bottom: 0;
+		width: 3px;
+		background: linear-gradient(180deg, #8b6f47 0%, #d4c4a1 100%);
+	}
+
+	.timeline-item {
+		position: relative;
+		margin-bottom: 3rem;
+	}
+
+	.timeline-marker {
+		position: absolute;
+		left: -2.5rem;
+		top: 0.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+		background: white;
+		border: 4px solid #8b6f47;
+		box-shadow: 0 0 0 4px white;
+	}
+
+	.timeline-item.completed .timeline-marker {
+		background: #4a7c2c;
+		border-color: #4a7c2c;
+	}
+
+	.timeline-item.upcoming .timeline-marker {
+		background: white;
+		border-color: #d4c4a1;
+	}
+
+	.timeline-content {
+		background: #f9f7f4;
+		border-radius: 8px;
+		padding: 1.5rem;
+		border-left: 4px solid #8b6f47;
+	}
+
+	.timeline-item.upcoming .timeline-content {
+		border-left-color: #d4c4a1;
+	}
+
+	.timeline-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 1rem;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.timeline-header h3 {
+		margin: 0;
+		color: #2d5016;
+		font-size: 1.5rem;
+	}
+
+	.date {
+		color: #8b6f47;
+		font-weight: 600;
+		font-style: italic;
+	}
+
+	.session-details {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.session-details h4 {
+		margin: 0 0 0.5rem;
+		color: #4a7c2c;
+		font-size: 1.1rem;
+	}
+
+	.heroes ul,
+	.rewards ul {
+		margin: 0;
+		padding-left: 1.5rem;
+		color: #555;
+	}
+
+	.heroes li,
+	.rewards li {
+		margin-bottom: 0.25rem;
+	}
+
+	.outcome p {
+		margin: 0;
+		color: #555;
+		line-height: 1.7;
+	}
+
+	.upcoming-text {
+		color: #999;
+		font-style: italic;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.page-header h1 {
+			font-size: 2rem;
+		}
+
+		.timeline {
+			padding-left: 2rem;
+		}
+
+		.timeline::before {
+			left: 0.5rem;
+		}
+
+		.timeline-marker {
+			left: -1.75rem;
+		}
+
+		.timeline-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.instructions {
+			padding: 1rem;
+		}
+
+		.timeline-container {
+			padding: 1rem;
+		}
+	}
+</style>
