@@ -2,70 +2,70 @@
 import Layout from '../layouts/Layout.astro';
 
 const scenarios = [
-	{ id: 1, name: "FARMER MAGGOT'S CROP", chapter: "The Shire" },
-	{ id: 2, name: "SHORT CUTS MAKE LONG DELAYS", chapter: "The Shire" },
-	{ id: 3, name: "BUCKLEBERRY FERRY", chapter: "The Shire" },
-	{ id: 4, name: "CRICKHOLLOW", chapter: "The Shire" },
-	{ id: 5, name: "THE OLD FOREST", chapter: "The Old Forest" },
-	{ id: 6, name: "FOG ON THE BARROW-DOWNS", chapter: "The Old Forest" },
-	{ id: 7, name: "HOUSE OF TOM BOMBADIL", chapter: "The Old Forest" },
-	{ id: 8, name: "NAZGÛL IN BREE", chapter: "The Journey to Rivendell" },
-	{ id: 9, name: "WEATHERTOP", chapter: "The Journey to Rivendell" },
-	{ id: 10, name: "FLIGHT TO THE FORD", chapter: "The Journey to Rivendell" },
-	{ id: 11, name: "RIVENDELL", chapter: "Rivendell" },
-	{ id: 12, name: "WARGS IN THE NIGHT", chapter: "The Journey through Moria" },
-	{ id: 13, name: "THE GATES OF MORIA", chapter: "The Journey through Moria" },
-	{ id: 14, name: "BALIN'S TOMB", chapter: "The Journey through Moria" },
-	{ id: 15, name: "ESCAPE FROM DWARROWDELF", chapter: "The Journey through Moria" },
-	{ id: 16, name: "THE BRIDGE OF KHAZAD-DÛM", chapter: "The Journey through Moria" },
-	{ id: 17, name: "LOTHLÓRIEN", chapter: "Lothlórien" },
-	{ id: 18, name: "REST IN LOTHLÓRIEN", chapter: "Lothlórien" },
-	{ id: 19, name: "ARAGORN'S STAND", chapter: "The Breaking of the Fellowship" },
-	{ id: 20, name: "BOROMIR'S REDEMPTION", chapter: "The Breaking of the Fellowship" },
-	{ id: 21, name: "BREAKING OF THE FELLOWSHIP", chapter: "The Breaking of the Fellowship" },
-	{ id: 22, name: "AMBUSH AT AMON HEN", chapter: "The Breaking of the Fellowship" },
-	{ id: 23, name: "AMBUSH AT NIGHT", chapter: "The Hunt for the Hobbits" },
-	{ id: 24, name: "THE WHITE WIZARD", chapter: "The Hunt for the Hobbits" },
-	{ id: 25, name: "WARG ATTACK", chapter: "The Hunt for the Hobbits" },
-	{ id: 26, name: "HELM'S DEEP", chapter: "Helm's Deep" },
-	{ id: 27, name: "RAISE THE LADDERS", chapter: "Helm's Deep" },
-	{ id: 28, name: "THE WALLS OF HELM'S DEEP", chapter: "Helm's Deep" },
-	{ id: 29, name: "PLANT THE CHARGES", chapter: "Helm's Deep" },
-	{ id: 30, name: "THE DEEPING WALL IS BREACHED", chapter: "Helm's Deep" },
-	{ id: 31, name: "RETREAT TO THE HORNBURG", chapter: "Helm's Deep" },
-	{ id: 32, name: "THE CAUSEWAY", chapter: "Helm's Deep" },
-	{ id: 33, name: "FALL BACK TO THE KEEP", chapter: "Helm's Deep" },
-	{ id: 34, name: "RIDE OUT", chapter: "Helm's Deep" },
-	{ id: 35, name: "ÉOMER'S RETURN", chapter: "Helm's Deep" },
-	{ id: 36, name: "LAST MARCH OF THE ENTS", chapter: "Isengard" },
-	{ id: 37, name: "THE TAMING OF SMÉAGOL", chapter: "The Journey to Mordor" },
-	{ id: 38, name: "THE DEAD MARSHES", chapter: "The Journey to Mordor" },
-	{ id: 39, name: "AMBUSH IN ITHILIEN", chapter: "The Journey to Mordor" },
-	{ id: 40, name: "ITHILIEN", chapter: "The Journey to Mordor" },
-	{ id: 41, name: "OSGILIATH", chapter: "The Journey to Mordor" },
-	{ id: 42, name: "SHELOB'S LAIR", chapter: "The Journey to Mordor" },
-	{ id: 43, name: "CIRITH UNGOL", chapter: "The Journey to Mordor" },
-	{ id: 44, name: "MINAS TIRITH", chapter: "The Siege of Gondor" },
-	{ id: 45, name: "THE WHITE RIDER", chapter: "The Siege of Gondor" },
-	{ id: 46, name: "FARAMIR'S CHARGE", chapter: "The Siege of Gondor" },
-	{ id: 47, name: "ATOP THE WALLS", chapter: "The Siege of Gondor" },
-	{ id: 48, name: "THE GATE IS BREACHED", chapter: "The Siege of Gondor" },
-	{ id: 49, name: "THE STREETS OF MINAS TIRITH", chapter: "The Siege of Gondor" },
-	{ id: 50, name: "THE WITCH-KING'S ARRIVAL", chapter: "The Siege of Gondor" },
-	{ id: 51, name: "EDORAS", chapter: "The Battle of Pelennor Fields" },
-	{ id: 52, name: "CHARGE OF THE ROHIRRIM", chapter: "The Battle of Pelennor Fields" },
-	{ id: 53, name: "DENETHOR'S MADNESS", chapter: "The Battle of Pelennor Fields" },
-	{ id: 54, name: "WAR BEASTS FROM THE SOUTH", chapter: "The Battle of Pelennor Fields" },
-	{ id: 55, name: "THE HORSE AND THE SERPENT", chapter: "The Battle of Pelennor Fields" },
-	{ id: 56, name: "DEATH OF THE KING", chapter: "The Battle of Pelennor Fields" },
-	{ id: 57, name: "FINAL FATE OF THE WITCH-KING", chapter: "The Battle of Pelennor Fields" },
-	{ id: 58, name: "PELARGIR", chapter: "The Grey Company" },
-	{ id: 59, name: "THE BATTLE FOR PELARGIR", chapter: "The Grey Company" },
-	{ id: 60, name: "THE DOCKS OF HARLOND", chapter: "The Grey Company" },
-	{ id: 61, name: "MINAS TIRITH", chapter: "The Grey Company" },
-	{ id: 62, name: "THE BLACK GATE", chapter: "The March on the Black Gate" },
-	{ id: 63, name: "PLATEAU OF GORGOROTH", chapter: "Mount Doom" },
-	{ id: 64, name: "THE END OF ALL THINGS", chapter: "Mount Doom" }
+	{ id: 1, name: "FARMER MAGGOT'S CROP", chapter: "The Shire", goodReward: "In the 'Short Cuts make Long Delays' Scenario, Gildor may start within 3\" of the centre of the eastern board edge.", evilReward: "In the 'Short Cuts make Long Delays' Scenario, the Hobbits must start the game in base contact with the hedge on the western side of the hedge" },
+	{ id: 2, name: "SHORT CUTS MAKE LONG DELAYS", chapter: "The Shire", goodReward: "In the 'Buckleberry Ferry' Scenario, the Hobbits may deploy between 6\" and 15\" of the western board edge", evilReward: "In the 'Buckleberry Ferry' Scenario, the Evil player has Priority during the first turn of the game" },
+	{ id: 3, name: "BUCKLEBERRY FERRY", chapter: "The Shire", goodReward: "In 'The Old Forest' Scenario, the Hobbits may deploy within 3\" of the centre of the western board edge", evilReward: "In 'The Old Forest' Scenario, the Hobbits may only move half of their Move allowance during the first turn" },
+	{ id: 4, name: "CRICKHOLLOW", chapter: "The Shire", goodReward: "RESTPOINT", evilReward: "" },
+	{ id: 5, name: "THE OLD FOREST", chapter: "The Old Forest", goodReward: "In the 'Fog on the Barrow-downs' Scenario, Tom Bombadil will arrive on the roll of a 4+ rather than a 5+.", evilReward: "In the 'Fog on the Barrow-downs' Scenario, the Barrow-wights will successfully sacrifice a Hobbit on a 3+ rather than a 4+." },
+	{ id: 6, name: "FOG ON THE BARROW-DOWNS", chapter: "The Old Forest", goodReward: "In the 'Nazgûl in Bree' Scenario, Frodo may re-roll his first failed Courage test for the Lure of the Ring special rule.", evilReward: "In the 'Nazgûl in Bree' Scenario, Good models may only move half their normal Move allowance on the first turn" },
+	{ id: 7, name: "HOUSE OF TOM BOMBADIL", chapter: "The Old Forest", goodReward: "RESTPOINT", evilReward: "" },
+	{ id: 8, name: "NAZGÛL IN BREE", chapter: "The Journey to Rivendell", goodReward: "In the 'Weathertop' Scenario, Aragorn will arrive on a 3+ rather than a 4+", evilReward: "In the 'Weathertop' Scenario, Aragorn will arrive on a 5+ rather than a 4+." },
+	{ id: 9, name: "WEATHERTOP", chapter: "The Journey to Rivendell", goodReward: "In the 'Flight to the Ford' Scenario, the Witch-king starts the game with 4 Will points rather than 5", evilReward: "In the 'Flight to the Ford' Scenario, the Ringwraiths may re-roll the D6 when determining how far their horses can move" },
+	{ id: 10, name: "FLIGHT TO THE FORD", chapter: "The Journey to Rivendell", goodReward: "In the 'Wargs in the Night' Scenario, Good models may re-roll To Hit rolls when making shooting attacks", evilReward: "In the 'Wargs in the Night' Scenario, once per game the Evil player may choose to automatically gain Priority. During this turn, no Good models may declare a Heroic Move." },
+	{ id: 11, name: "RIVENDELL", chapter: "Rivendell", goodReward: "RESTPOINT", evilReward: "" },
+	{ id: 12, name: "WARGS IN THE NIGHT", chapter: "The Journey through Moria", goodReward: "In 'The Gates of Moria' Scenario, the Good player may deploy the remaining Good models within 3\" of the gates to Moria", evilReward: "In 'The Gates of Moria' Scenario, Frodo may not move during the first turn of the game" },
+	{ id: 13, name: "THE GATES OF MORIA", chapter: "The Journey through Moria", goodReward: "In the 'Balin's Tomb' Scenario, Frodo may re-roll failed Fate rolls", evilReward: "In the 'Balin's Tomb' Scenario, the Cave Troll may re-roll failed To Wound rolls" },
+	{ id: 14, name: "BALIN'S TOMB", chapter: "The Journey through Moria", goodReward: "In the 'Escape from Dwarrowdelf' Scenario, Chasm Markers cannot be placed during the first four turns of the game.", evilReward: "In the 'Escape from Dwarrowdelf' Scenario, before the first turn begins, the Evil player may place a single Chasm Marker on one of the walkways at least 6\" away from any Good model." },
+	{ id: 15, name: "ESCAPE FROM DWARROWDELF", chapter: "The Journey through Moria", goodReward: "In 'The Bridge of Khazad-dûm' Scenario, Gandalf may re-roll a single D6 when attempting to cast the Sorcerous Blast Magical Power on the bridge.", evilReward: "In 'The Bridge of Khazad-dûm' Scenario, the Balrog may subtract 1 to its rolls to see if it arrives." },
+	{ id: 16, name: "THE BRIDGE OF KHAZAD-DÛM", chapter: "The Journey through Moria", goodReward: "In the 'Lothlórien' Scenario, the Good player may re-roll the D6 when determining which marker the Elves are located at.", evilReward: "In the 'Lothlórien' Scenario, the Evil player may force the Good player to re-roll the D6 when determining which marker the Elves are located at" },
+	{ id: 17, name: "LOTHLÓRIEN", chapter: "Lothlórien", goodReward: "In the 'Aragorn's Stand' Scenario, the Good player adds 1 to the roll when determining if Legolas and Gimli have arrived", evilReward: "In the 'Aragorn's Stand' Scenario, the Good player subtracts 1 to the roll when determining if Legolas and Gimli have arrived" },
+	{ id: 18, name: "REST IN LOTHLÓRIEN", chapter: "Lothlórien", goodReward: "RESTPOINT", evilReward: "" },
+	{ id: 19, name: "ARAGORN'S STAND", chapter: "The Breaking of the Fellowship", goodReward: "In the 'Boromir's Redemption' Scenario, Boromir may have a shield.", evilReward: "In the 'Boromir's Redemption' Scenario, Evil models may re-roll failed To Wound rolls against Boromir in combat" },
+	{ id: 20, name: "BOROMIR'S REDEMPTION", chapter: "The Breaking of the Fellowship", goodReward: "In 'The Breaking of the Fellowship' Scenario, Boromir starts the game with 2 Wounds rather than 1.", evilReward: "In 'The Breaking of the Fellowship' Scenario, Boromir starts the game with 2 Might rather than 3" },
+	{ id: 21, name: "BREAKING OF THE FELLOWSHIP", chapter: "The Breaking of the Fellowship", goodReward: "In the 'Taming of Sméagol' Scenario, the Hobbits may re-roll failed To Wound rolls against Gollum.", evilReward: "In the 'Taming of Sméagol' Scenario, Gollum may ignore the first natural 6 that is rolled when determining if he has woken the Hobbits." },
+	{ id: 22, name: "AMBUSH AT AMON HEN", chapter: "The Breaking of the Fellowship", goodReward: "In the 'Taming of Sméagol' Scenario, the Hobbits may re-roll failed To Wound rolls against Gollum.", evilReward: "In the 'Taming of Sméagol' Scenario, Gollum may ignore the first natural 6 that is rolled when determining if he has woken the Hobbits." },
+	{ id: 23, name: "AMBUSH AT NIGHT", chapter: "The Hunt for the Hobbits", goodReward: "In the Last March of the Ents Scenario, the Ents may deploy within 9\" of the eastern board edge.", evilReward: "In the Last March of the Ents Scenario, Treebeard starts the game with only a single point of Might." },
+	{ id: 24, name: "THE WHITE WIZARD", chapter: "The Hunt for the Hobbits", goodReward: "In the Éomer's Return Scenario, Gandalf may re-roll a single D6 when making Casting tests.", evilReward: "In the Éomer's Return Scenario, Gandalf suffers a -1 penalty when making Casting tests." },
+	{ id: 25, name: "WARG ATTACK", chapter: "The Hunt for the Hobbits", goodReward: "In the Raise the Ladders Scenario, Aragorn, Legolas and Gimli may re-roll a D6 when attempting to knock down a ladder.", evilReward: "In the Raise the Ladders Scenario, Aragorn starts the game with only a single point of Might" },
+	{ id: 26, name: "HELM'S DEEP", chapter: "Helm's Deep", goodReward: "RESTPOINT FOR ARAGORN, LEGOLAS AND GIMLI", evilReward: "" },
+	{ id: 27, name: "RAISE THE LADDERS", chapter: "Helm's Deep", goodReward: "In The Walls of Helm's Deep Scenario, the Good side instead needs to kill 30 models in order to win.", evilReward: "In The Walls of Helm's Deep Scenario, the Good side instead needs to kill 40 models in order to win." },
+	{ id: 28, name: "THE WALLS OF HELM'S DEEP", chapter: "Helm's Deep", goodReward: "In the Plant the Charges Scenario, the Uruk-hai Demolition Teams are instead deployed within 6\" of the eastern board edge.", evilReward: "In the Plant the Charges Scenario, Legolas starts the game with only a single point of Might" },
+	{ id: 29, name: "PLANT THE CHARGES", chapter: "Helm's Deep", goodReward: "In The Deeping Wall is Breached Scenario, each Good Hero will instead start the game with a single point of Fate", evilReward: "In The Deeping Wall is Breached Scenario, Good models that start the game Prone may only stand up in the first turn of the game; they may not move further that turn." },
+	{ id: 30, name: "THE DEEPING WALL IS BREACHED", chapter: "Helm's Deep", goodReward: "In the Retreat to the Hornburg Scenario, the Good side instead needs to have 8 models escape the board in order to win.", evilReward: "In the Retreat to the Hornburg Scenario, the Good side instead needs to have 12 models escape the board in order to win" },
+	{ id: 31, name: "RETREAT TO THE HORNBURG", chapter: "Helm's Deep", goodReward: "In The Causeway Scenario, the gate instead has two wounds remaining", evilReward: "In The Causeway Scenario, the Evil player may re-roll failed To Wound rolls of a 1." },
+	{ id: 32, name: "THE CAUSEWAY", chapter: "Helm's Deep", goodReward: "In the Fall Back to the Keep Scenario, the Good player may re-roll To Wound rolls of a 1 for Aragorn and Gimli.", evilReward: "In the Fall Back to the Keep Scenario, Aragorn and Gimli start the game with only a single point of Might." },
+	{ id: 33, name: "FALL BACK TO THE KEEP", chapter: "Helm's Deep", goodReward: "In the Ride Out Scenario, once per game Théoden may declare a Heroic Combat without spending Might", evilReward: "In the Ride Out Scenario, once per game the Evil player may choose to automatically gain Priority instead of rolling for it." },
+	{ id: 34, name: "RIDE OUT", chapter: "Helm's Deep", goodReward: "In the Éomer's Return Scenario, once per game the Good player may choose to automatically gain Priority instead of rolling for it.", evilReward: "In the Éomer's Return Scenario, once per game the Evil player may choose to automatically gain Priority instead of rolling for it." },
+	{ id: 35, name: "ÉOMER'S RETURN", chapter: "Helm's Deep", goodReward: "In the \"The End of All Things\" scenario, choose a hero to gain 1 additional free Fate point.", evilReward: "In the \"The End of All Things\" scenario, choose a good hero to lose 1 Fate point before the game start." },
+	{ id: 36, name: "LAST MARCH OF THE ENTS", chapter: "Isengard", goodReward: "In the \"The End of All Things\" scenario, choose a hero to gain 1 additional free Fate point.", evilReward: "In the \"The End of All Things\" scenario, choose a good hero to lose 1 Fate point before the game start." },
+	{ id: 37, name: "THE TAMING OF SMÉAGOL", chapter: "The Journey to Mordor", goodReward: "In 'The Dead Marshes' Scenario, Frodo, Sam and Sméagol may deploy within 6\" of the centre of the western board edge", evilReward: "In 'The Dead Marshes' Scenario, the Ringwraith may deploy within 6\" of the centre of the eastern board edge." },
+	{ id: 38, name: "THE DEAD MARSHES", chapter: "The Journey to Mordor", goodReward: "In the 'Ambush in Ithilien' Scenario, Good Hero models may re-roll failed To Wound rolls when making shooting attacks.", evilReward: "In the 'Ambush in Ithilien' Scenario, one Mûmak may make a 'free' move before the first turn begins." },
+	{ id: 39, name: "AMBUSH IN ITHILIEN", chapter: "The Journey to Mordor", goodReward: "In the 'Osgiliath' Scenario, Good reinforcements return to the board on a 3+ rather than a 4+.", evilReward: "In the 'Osgiliath' Scenario, Evil reinforcements return to the board on a 3+ rather than a 4+." },
+	{ id: 40, name: "ITHILIEN", chapter: "The Journey to Mordor", goodReward: "RESTPOINT FOR FRODO AND SAM", evilReward: "" },
+	{ id: 41, name: "OSGILIATH", chapter: "The Journey to Mordor", goodReward: "In the 'Shelob's Lair' Scenario, Sam may deploy up to 6\" from the centre of the western board edge.", evilReward: "In the 'Shelob's Lair' Scenario, Sam may not move during the first turn of the game." },
+	{ id: 42, name: "SHELOB'S LAIR", chapter: "The Journey to Mordor", goodReward: "In the 'Cirith Ungol' Scenario, Shagrat may re-roll 1s when rolling To Wound.", evilReward: "In the 'Cirith Ungol' Scenario, Gorbag may re-roll 1s when rolling To Wound." },
+	{ id: 43, name: "CIRITH UNGOL", chapter: "The Journey to Mordor", goodReward: "In the 'Plateau of Gorgoroth' Scenario, Sam may re-roll all failed To Wound rolls.", evilReward: "In the 'Plateau of Gorgoroth' Scenario, the Hobbits will be discovered on a 5+ rather than a 6." },
+	{ id: 44, name: "MINAS TIRITH", chapter: "The Siege of Gondor", goodReward: "RESTPOINT FOR GANDALF AND PIPPIN", evilReward: "" },
+	{ id: 45, name: "THE WHITE RIDER", chapter: "The Siege of Gondor", goodReward: "In the Atop the Walls Scenario, Gandalf may deploy anywhere on the walls of Minas Tirith.", evilReward: "In the Faramir's Charge Scenario, all Evil models gain a +1 bonus To Hit when shooting– even when using the Volley Fire special rule." },
+	{ id: 46, name: "FARAMIR'S CHARGE", chapter: "The Siege of Gondor", goodReward: "In the Charge of the Rohirrim Scenario, Gothmog starts the game with only a single Might point.", evilReward: "In the Atop the Walls Scenario, the Good player needs to slay 35 models to win the game, rather than 30 models" },
+	{ id: 47, name: "ATOP THE WALLS", chapter: "The Siege of Gondor", goodReward: "In The Gate is Breached Scenario, Gandalf gains a bonus of +1 when making a Casting roll", evilReward: "In The Gate is Breached Scenario, Gandalf starts the game with only a single point of Might" },
+	{ id: 48, name: "THE GATE IS BREACHED", chapter: "The Siege of Gondor", goodReward: "In The Streets of Minas Tirith Scenario, Gandalf gains a bonus of +1 when making a Casting roll", evilReward: "In The Streets of Minas Tirith Scenario, Gandalf starts the game with only a single point of Might" },
+	{ id: 49, name: "THE STREETS OF MINAS TIRITH", chapter: "The Siege of Gondor", goodReward: "In the Black Gate Scenario, Pippin may declare a Heroic Combat each turn without expending Might", evilReward: "In The Witch-king's Arrival Scenario, Gandalf starts the game with only 17 Power tokens." },
+	{ id: 50, name: "THE WITCH-KING'S ARRIVAL", chapter: "The Siege of Gondor", goodReward: "In the Denethor's Madness Scenario, Gandalf starts the game with 3 Will points rather than 1.", evilReward: "In the Death of the King Scenario, the Evil player may add 1 to all rolls when rolling to see if the Witch-king arrives." },
+	{ id: 51, name: "EDORAS", chapter: "The Battle of Pelennor Fields", goodReward: "RESTPOINT FOR MERRY", evilReward: "" },
+	{ id: 52, name: "CHARGE OF THE ROHIRRIM", chapter: "The Battle of Pelennor Fields", goodReward: "In the War Beasts from the South Scenario, Éomer may re-roll failed To Hit and To Wound rolls when using a throwing spear", evilReward: "In the War Beasts from the South Scenario, at the start of any turn before Priority is rolled, the Evil player may declare that they are seizing Priority– there is no need to roll. This can only be done once." },
+	{ id: 53, name: "DENETHOR'S MADNESS", chapter: "The Battle of Pelennor Fields", goodReward: "In the Black Gate Scenario, Gandalf may re-roll a single D6 when making a Casting roll each time he fails to cast a Magical Power.", evilReward: "In the Black Gate Scenario, Gandalf starts the game with only a single point of Might." },
+	{ id: 54, name: "WAR BEASTS FROM THE SOUTH", chapter: "The Battle of Pelennor Fields", goodReward: "In The Horse and the Serpent Scenario, Théoden may re-roll failed To Wound rolls.", evilReward: "In The Horse and the Serpent Scenario, Théoden begins the game with no Fate points remaining." },
+	{ id: 55, name: "THE HORSE AND THE SERPENT", chapter: "The Battle of Pelennor Fields", goodReward: "In the Death of the King Scenario, Théoden gains the Resistant to Magic special rule.", evilReward: "In the Death of the King Scenario, the Witch-king gains a bonus of +1 to all casting rolls" },
+	{ id: 56, name: "DEATH OF THE KING", chapter: "The Battle of Pelennor Fields", goodReward: "In the Final Fate of the Witch-king Scenario, the first time that Merry rolls To Wound the Witch-king, he gains a +2 bonus to his roll.", evilReward: "In the Final Fate of the Witch-king Scenario, the Witch-king is only wounded on a 5+" },
+	{ id: 57, name: "FINAL FATE OF THE WITCH-KING", chapter: "The Battle of Pelennor Fields", goodReward: "In the Black Gate Scenario, Merry may declare a Heroic Combat each turn without expending Might", evilReward: "In the Black Gate Scenario, choose a good hero to lose 1 Fate point before the game start." },
+	{ id: 58, name: "PELARGIR", chapter: "The Grey Company", goodReward: "RESTPOINT FOR ARAGORN, LEGOLAS AND GIMLI", evilReward: "" },
+	{ id: 59, name: "THE BATTLE FOR PELARGIR", chapter: "The Grey Company", goodReward: "In The Docks of Harlond Scenario, the King of the Dead gains the Harbinger of Evil special rule.", evilReward: "In The Docks of Harlond Scenario, the Evil player may have an additional 12 Morannon Orcs in their force" },
+	{ id: 60, name: "THE DOCKS OF HARLOND", chapter: "The Grey Company", goodReward: "In the Black Gate Scenario, Aragorn increases their Fight value to 7 for the duration of the Scenario.", evilReward: "In the Black Gate Scenario, Aragorn starts the game with only a single point of Might." },
+	{ id: 61, name: "MINAS TIRITH", chapter: "The Grey Company", goodReward: "RESTPOINT FOR ARAGORN, LEGOLAS, GIMLI, GANDALF, MERRY AND PIPPIN", evilReward: "" },
+	{ id: 62, name: "THE BLACK GATE", chapter: "The March on the Black Gate", goodReward: "In the \"The End of All Things\" scenario, choose a hero to gain 1 additional free Fate point.", evilReward: "In the \"The End of All Things\" scenario, choose a good hero to lose 1 Fate point before the game start." },
+	{ id: 63, name: "PLATEAU OF GORGOROTH", chapter: "Mount Doom", goodReward: "In 'The End of All Things' Scenario, whenever Frodo suffers a Wound roll a D6. On the roll of a natural 6, the Wound is ignored.", evilReward: "In 'The End of All Things' Scenario, the Evil player may use the Exhaustion power on a 2+ rather than a 3+" },
+	{ id: 64, name: "THE END OF ALL THINGS", chapter: "Mount Doom", goodReward: "", evilReward: "" }
 ];
 
 const chapterGroups = scenarios.reduce((acc, scenario) => {
@@ -75,14 +75,47 @@ const chapterGroups = scenarios.reduce((acc, scenario) => {
 	acc[scenario.chapter].push(scenario);
 	return acc;
 }, {} as Record<string, typeof scenarios>);
+
+// Function to check if a scenario is a RESTPOINT
+function isRestPoint(scenario: typeof scenarios[0]): boolean {
+	return scenario.goodReward.toUpperCase().includes('RESTPOINT');
+}
+
+// Function to get PDF path for a scenario
+function getPdfPath(scenario: typeof scenarios[0]): string | null {
+	// Don't show PDF for RESTPOINT scenarios
+	if (isRestPoint(scenario)) {
+		return null;
+	}
+	
+	// Count how many non-RESTPOINT scenarios come before this one
+	let pdfNumber = 0;
+	for (let i = 0; i < scenarios.length; i++) {
+		if (scenarios[i].id === scenario.id) {
+			break;
+		}
+		if (!isRestPoint(scenarios[i])) {
+			pdfNumber++;
+		}
+	}
+	
+	// PDF number is 1-indexed (first non-RESTPOINT scenario is PDF 1)
+	pdfNumber++;
+	
+	// Construct PDF filename: "{pdfNumber} {SCENARIO_NAME}.pdf"
+	const filename = `${pdfNumber} ${encodeURIComponent(scenario.name)}.pdf`;
+	return `/mesbg-cbw-campaign/scenarios/${filename}`;
+}
 ---
 
-<Layout title="Campaign Scenarios">
+<Layout title="Cenários da Campanha">
 	<main>
 		<header class="page-header">
-			<a href="/" class="back-link">← Back to Home</a>
-			<h1>Campaign Scenarios</h1>
-			<p>69 scenarios following the Quest of the Ringbearer</p>
+			<a href="./" class="back-link">← Voltar para Início</a>
+			<div class="header-content">
+				<h1>Cenários da Campanha</h1>
+				<p>54 cenários seguindo A Jornada do Portador do Anel</p>
+			</div>
 		</header>
 
 		<div class="scenarios-container">
@@ -90,18 +123,140 @@ const chapterGroups = scenarios.reduce((acc, scenario) => {
 				<section class="chapter-section">
 					<h2 class="chapter-title">{chapter}</h2>
 					<div class="scenario-list">
-						{chapterScenarios.map((scenario) => (
-							<div class="scenario-card">
-								<span class="scenario-number">{scenario.id}</span>
-								<span class="scenario-name">{scenario.name}</span>
-							</div>
-						))}
+						{chapterScenarios.map((scenario) => {
+							const pdfPath = getPdfPath(scenario);
+							return (
+								<div class={`scenario-card ${(scenario.goodReward || scenario.evilReward) ? 'has-rewards' : ''} ${pdfPath ? 'has-pdf' : ''}`} data-scenario-id={scenario.id}>
+									<div class="scenario-header">
+										<span class="scenario-number">{scenario.id}</span>
+										<span class="scenario-name">{scenario.name}</span>
+										<div class="scenario-actions">
+											{pdfPath && (
+												<button class="pdf-button" data-pdf-path={pdfPath} data-scenario-name={scenario.name} title="Ver PDF">
+													📄
+												</button>
+											)}
+											{(scenario.goodReward || scenario.evilReward) && (
+												<span class="expand-icon">▼</span>
+											)}
+										</div>
+									</div>
+									{(scenario.goodReward || scenario.evilReward) && (
+										<div class="scenario-rewards">
+											{scenario.goodReward && (
+												<div class="reward good-reward">
+													<h4>Bônus para o Bem</h4>
+													<p>{scenario.goodReward}</p>
+												</div>
+											)}
+											{scenario.evilReward && (
+												<div class="reward evil-reward">
+													<h4>Bônus para o Mal</h4>
+													<p>{scenario.evilReward}</p>
+												</div>
+											)}
+										</div>
+									)}
+								</div>
+							);
+						})}
 					</div>
 				</section>
 			))}
 		</div>
 	</main>
+
+	<!-- PDF Viewer Modal -->
+	<div id="pdf-modal" class="pdf-modal">
+		<div class="pdf-modal-content">
+			<div class="pdf-modal-header">
+				<h2 id="pdf-modal-title"></h2>
+				<button class="pdf-modal-close" id="pdf-modal-close">×</button>
+			</div>
+			<div class="pdf-modal-body">
+				<iframe id="pdf-viewer" src="" frameborder="0"></iframe>
+			</div>
+		</div>
+	</div>
 </Layout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const scenarioCards = document.querySelectorAll('.scenario-card');
+		const pdfModal = document.getElementById('pdf-modal');
+		const pdfViewer = document.getElementById('pdf-viewer') as HTMLIFrameElement | null;
+		const pdfModalTitle = document.getElementById('pdf-modal-title');
+		const pdfModalClose = document.getElementById('pdf-modal-close');
+		
+		if (!pdfModal || !pdfViewer || !pdfModalTitle || !pdfModalClose) {
+			return;
+		}
+		
+		// Handle scenario card expansion for rewards
+		scenarioCards.forEach(card => {
+			const header = card.querySelector('.scenario-header');
+			const rewards = card.querySelector('.scenario-rewards');
+			
+			if (header && rewards) {
+				header.addEventListener('click', (e) => {
+					// Don't expand if clicking the PDF button
+					const target = e.target as HTMLElement;
+					if (target && target.closest('.pdf-button')) {
+						return;
+					}
+					card.classList.toggle('expanded');
+				});
+			}
+		});
+
+		// Handle PDF button clicks
+		document.querySelectorAll('.pdf-button').forEach(button => {
+			button.addEventListener('click', (e) => {
+				e.stopPropagation();
+				const pdfPath = button.getAttribute('data-pdf-path');
+				const scenarioName = button.getAttribute('data-scenario-name');
+				
+				if (pdfPath && pdfViewer) {
+					pdfViewer.src = pdfPath;
+					pdfModalTitle.textContent = scenarioName || '';
+					pdfModal.classList.add('active');
+					document.body.style.overflow = 'hidden';
+				}
+			});
+		});
+
+		// Close modal
+		pdfModalClose.addEventListener('click', () => {
+			pdfModal.classList.remove('active');
+			if (pdfViewer) {
+				pdfViewer.src = '';
+			}
+			document.body.style.overflow = '';
+		});
+
+		// Close modal when clicking outside
+		pdfModal.addEventListener('click', (e) => {
+			if (e.target === pdfModal) {
+				pdfModal.classList.remove('active');
+				if (pdfViewer) {
+					pdfViewer.src = '';
+				}
+				document.body.style.overflow = '';
+			}
+		});
+
+		// Close modal with Escape key
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && pdfModal.classList.contains('active')) {
+				pdfModal.classList.remove('active');
+				if (pdfViewer) {
+					pdfViewer.src = '';
+				}
+				document.body.style.overflow = '';
+			}
+		});
+	});
+</script>
 
 <style>
 	main {
@@ -113,6 +268,40 @@ const chapterGroups = scenarios.reduce((acc, scenario) => {
 	.page-header {
 		text-align: center;
 		margin-bottom: 3rem;
+		position: relative;
+		padding: 2rem 0;
+	}
+
+	.header-content {
+		position: relative;
+		z-index: 1;
+	}
+
+	.header-decorations {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.decoration-image {
+		max-width: 200px;
+		height: auto;
+		border-radius: 10px;
+	}
+
+	.decoration-left {
+		transform: scaleX(-1);
+	}
+
+	.decoration-right {
+		/* Keep original orientation */
 	}
 
 	.back-link {
@@ -167,19 +356,43 @@ const chapterGroups = scenarios.reduce((acc, scenario) => {
 	}
 
 	.scenario-card {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		padding: 1rem;
 		background: #f9f7f4;
 		border-radius: 6px;
 		border-left: 4px solid #8b6f47;
 		transition: transform 0.2s, box-shadow 0.2s;
+		overflow: hidden;
 	}
 
 	.scenario-card:hover {
-		transform: translateX(4px);
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.scenario-header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.scenario-actions {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-left: auto;
+	}
+
+	.scenario-card.has-rewards .scenario-header:hover {
+		background: rgba(139, 111, 71, 0.1);
+	}
+
+	.scenario-card.expanded .scenario-header {
+		border-bottom: 1px solid rgba(139, 111, 71, 0.2);
+	}
+
+	.scenario-card.expanded .expand-icon {
+		transform: rotate(180deg);
 	}
 
 	.scenario-number {
@@ -201,11 +414,173 @@ const chapterGroups = scenarios.reduce((acc, scenario) => {
 		font-weight: 600;
 		font-size: 0.95rem;
 		letter-spacing: 0.5px;
+		flex: 1;
+	}
+
+	.pdf-button {
+		background: #4a7c2c;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		padding: 0.4rem 0.6rem;
+		cursor: pointer;
+		font-size: 1rem;
+		transition: background 0.2s, transform 0.2s;
+		line-height: 1;
+	}
+
+	.pdf-button:hover {
+		background: #3a6c1c;
+		transform: scale(1.1);
+	}
+
+	.expand-icon {
+		color: #8b6f47;
+		font-size: 0.8rem;
+		transition: transform 0.3s;
+	}
+
+	.scenario-rewards {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-out;
+	}
+
+	.scenario-card.expanded .scenario-rewards {
+		max-height: 1000px;
+		transition: max-height 0.5s ease-in;
+	}
+
+	.reward {
+		padding: 1rem;
+		margin: 0.5rem 1rem;
+		border-radius: 4px;
+	}
+
+	.good-reward {
+		background: #e8f5e9;
+		border-left: 3px solid #4a7c2c;
+	}
+
+	.evil-reward {
+		background: #ffebee;
+		border-left: 3px solid #c62828;
+	}
+
+	.reward h4 {
+		margin: 0 0 0.5rem;
+		font-size: 0.9rem;
+		color: #2d5016;
+	}
+
+	.good-reward h4 {
+		color: #2d5016;
+	}
+
+	.evil-reward h4 {
+		color: #c62828;
+	}
+
+	.reward p {
+		margin: 0;
+		font-size: 0.85rem;
+		line-height: 1.5;
+		color: #555;
+	}
+
+	/* PDF Modal Styles */
+	.pdf-modal {
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		backdrop-filter: blur(4px);
+	}
+
+	.pdf-modal.active {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.pdf-modal-content {
+		background: white;
+		border-radius: 12px;
+		width: 90%;
+		max-width: 1200px;
+		height: 90%;
+		max-height: 90vh;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	}
+
+	.pdf-modal-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.5rem;
+		border-bottom: 2px solid #8b6f47;
+		background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+		color: #f4e4c1;
+		border-radius: 12px 12px 0 0;
+	}
+
+	.pdf-modal-header h2 {
+		margin: 0;
+		font-size: 1.5rem;
+		color: #f4e4c1;
+	}
+
+	.pdf-modal-close {
+		background: transparent;
+		border: none;
+		color: #f4e4c1;
+		font-size: 2rem;
+		cursor: pointer;
+		line-height: 1;
+		padding: 0;
+		width: 2rem;
+		height: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+		transition: background 0.2s;
+	}
+
+	.pdf-modal-close:hover {
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	.pdf-modal-body {
+		flex: 1;
+		padding: 1rem;
+		overflow: hidden;
+	}
+
+	#pdf-viewer {
+		width: 100%;
+		height: 100%;
+		border: none;
+		border-radius: 8px;
 	}
 
 	@media (max-width: 768px) {
+		.page-header {
+			padding: 1rem 0;
+		}
+
 		.page-header h1 {
 			font-size: 2rem;
+		}
+
+		.decoration-image {
+			max-width: 80px;
 		}
 
 		.scenario-list {

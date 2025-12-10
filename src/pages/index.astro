@@ -1,51 +1,149 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const fellowshipHeroes = [
+	{ name: "Frodo", wounds: '2/2', might: '2/2', will: '3/3', fate: '3/3' },
+	{ name: "Sam", wounds: '2/2', might: '2/2', will:'2/2', fate: '2/2' },
+	{ name: "Merry", wounds: '1/1', might: '0/0', will: '0/0', fate: '2/2'},
+	{ name: "Pippin", wounds: '1/1', might: '0/0', will: '0/0', fate: '2/2' },
+	{ name: "Aragorn", wounds: '3/3', might: '3/3', will: '3/3', fate: '3/3' },
+	{ name: "Legolas", wounds: '2/2', might: '3/3', will: '2/2', fate: '3/3' },
+	{ name: "Gimli", wounds: '2/2', might: '3/3', will: '2/2', fate: '3/3' },
+	{ name: "Boromir", wounds: '3/3', might: '6/6', will: '1/1', fate: '0/0' },
+	{ name: "Gandalf", wounds: '3/3', might: '3/3', will: '6/6', fate: '3/3' }
+];
 ---
 
 <Layout title="Quest of the Ringbearer Campaign">
 	<main>
 		<header class="hero">
-			<h1>Quest of the Ringbearer</h1>
-			<p class="subtitle">Middle Earth Strategy Battle Game Co-op Campaign</p>
-			<p class="club-name">Minas Gerais Wargames Club</p>
+			<div class="hero-content">
+				<img src="/mesbg-cbw-campaign/bg/logo.png" alt="Quest of the Ringbearer" class="hero-logo" />
+				<h1>Quest of the Ringbearer</h1>
+				<p class="subtitle">Middle Earth Strategy Battle Game Co-op Campaign</p>
+				<p class="club-name">Clube Mineiro de Wargames</p>
+			</div>
 		</header>
 
 		<section class="intro">
-			<h2>About the Campaign</h2>
+			<h2>Sobre a Campanha</h2>
 			<p>
-				Join us on an epic journey through Middle-earth as we relive the Quest of the Ringbearer.
-				Each month, we gather to play narrative scenarios that follow the Fellowship's perilous path
-				from the Shire to Mount Doom.
+				Junte-se a nós em uma jornada épica pela Terra-média enquanto revivemos A Jornada do Portador do Anel.
+				A cada mês, nos reunimos para jogar cenários narrativos que seguem o caminho perigoso da Sociedade
+				do Condado até o Monte da Perdição.
 			</p>
 			<p>
-				Players take on the roles of heroes in each scenario, with outcomes affecting future battles.
-				Injuries, experience points, and victory rewards are tracked throughout the campaign. Choose
-				different heroes each session to experience the full breadth of the story.
+				Os jogadores assumem os papéis de heróis em cada cenário, com resultados afetando batalhas futuras.
+				Ferimentos, pontos de experiência e recompensas de vitória são rastreados ao longo da campanha. Escolha
+				diferentes heróis a cada sessão para experimentar toda a amplitude da história.
 			</p>
+
+			<a href="https://drive.google.com/file/d/1xV6SEaiySp8PLuxlzyWe4mQFAywNvTrA/view?usp=drive_link" class="nav-button">
+				Ver Regras do Modo Cooperativo
+			</a>
+			
 		</section>
 
 		<section class="schedule">
-			<h2>Campaign Information</h2>
+			<h2>Informações da Campanha</h2>
 			<div class="info-grid">
 				<div class="info-card">
-					<h3>Frequency</h3>
-					<p>Once per month</p>
+					<h3>Frequência</h3>
+					<p>Uma vez por mês</p>
 				</div>
 				<div class="info-card">
-					<h3>Next Session</h3>
-					<p>Thursday - Farmer Maggot's Crop</p>
+					<h3>Próxima Sessão</h3>
+					<p>Quinta-feira - 11/12</p>
 				</div>
 				<div class="info-card">
-					<h3>Total Scenarios</h3>
-					<p>69 epic battles</p>
+					<h3>Total de Cenários</h3>
+					<p>54 batalhas épicas</p>
+					<a href="scenarios" class="nav-button">Ver Todos os Cenários</a>
 				</div>
 			</div>
 		</section>
 
-		<nav class="main-nav">
-			<a href="/scenarios" class="nav-button">View All Scenarios</a>
-			<a href="/timeline" class="nav-button">Campaign Timeline</a>
-		</nav>
+		<section class="heroes-section">
+			<div class="section-header">
+				<h2>Heróis da Sociedade</h2>
+			</div>
+			<div class="heroes-grid">
+				{fellowshipHeroes.map((hero) => (
+					<div class="hero-card">
+						<h3>{hero.name}</h3>
+						<div class="hero-stats">
+							<div class="stat">
+								<span class="stat-label">Wounds</span>
+								<span class="stat-value">{hero.wounds}</span>
+							</div>
+							<div class="stat">
+								<span class="stat-label">Power</span>
+								<span class="stat-value">{hero.might}</span>
+							</div>
+							<div class="stat">
+								<span class="stat-label">Will</span>
+								<span class="stat-value">{hero.will}</span>
+							</div>
+							<div class="stat">
+								<span class="stat-label">Fate</span>
+								<span class="stat-value">{hero.fate}</span>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<header class="page-header">
+			<h1>Linha do Tempo da Campanha</h1>
+			<p>Acompanhe nossa jornada pela Terra-média</p>
+		</header>
+
+		<div class="timeline-container">
+			<div class="timeline">
+				<div class="timeline-item completed">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Cenário 1 - FARMER MAGGOT'S CROP</h3>
+							<span class="date">11 de dezembro de 2025</span>
+						</div>
+						<div class="session-details">
+							<div class="heroes">
+								<h4>Heróis</h4>
+								<ul>
+									<li>Nome do Jogador - Nome do Herói (Status)</li>
+								</ul>
+							</div>
+							<div class="outcome">
+								<h4>Resultado</h4>
+								<p>Vitória/Derrota - Breve descrição do que aconteceu no cenário.</p>
+							</div>
+							<div class="rewards">
+								<h4>Recompensas e Ferimentos</h4>
+								<ul>
+									<li>Jogador ganhou X pontos</li>
+									<li>Herói sofreu Y ferimento</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item upcoming">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Cenário 2 - SHORT CUTS MAKE LONG DELAYS</h3>
+							<span class="date">Janeiro de 2026</span>
+						</div>
+						<div class="session-details">
+							<p class="upcoming-text">Cenário próximo</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 </Layout>
 
@@ -54,16 +152,65 @@ import Layout from '../layouts/Layout.astro';
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 2rem 1rem;
+		position: relative;
+		z-index: 1;
 	}
 
 	.hero {
-		text-align: center;
-		padding: 3rem 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 3rem 2rem;
 		background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
 		color: #f4e4c1;
 		border-radius: 12px;
 		margin-bottom: 3rem;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+		position: relative;
+		overflow: hidden;
+		gap: 2rem;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: 
+			radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.2) 0%, transparent 50%),
+			radial-gradient(circle at 80% 50%, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+		pointer-events: none;
+	}
+
+	.hero-content {
+		flex: 1;
+		text-align: center;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-image {
+		flex: 0 0 auto;
+		position: relative;
+		z-index: 1;
+		border-radius: 10px;
+	}
+
+	.hero-logo {
+		max-width: 200px;
+		height: auto;
+		margin-bottom: 1rem;
+		filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+	}
+
+	.fellowship-image {
+		max-width: 300px;
+		height: auto;
+		filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+		opacity: 0.9;
+		border-radius: 10px;
 	}
 
 	.hero h1 {
@@ -93,6 +240,28 @@ import Layout from '../layouts/Layout.astro';
 		border-radius: 8px;
 		border-left: 4px solid #8b6f47;
 		margin-bottom: 3rem;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.intro::after {
+		content: '';
+		position: absolute;
+		top: -50%;
+		right: -10%;
+		width: 200px;
+		height: 200px;
+		background-image: url('/mesbg-cbw-campaign/bg/shire.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.intro h2,
+	.intro p {
+		position: relative;
+		z-index: 1;
 	}
 
 	.intro h2 {
@@ -115,6 +284,90 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 2rem;
 	}
 
+	.heroes-section {
+		margin-bottom: 3rem;
+		position: relative;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 2rem;
+		position: relative;
+	}
+
+	.heroes-section h2 {
+		color: #2d5016;
+		margin-bottom: 1rem;
+	}
+
+	.section-decoration {
+		display: flex;
+		justify-content: center;
+		margin-top: 1rem;
+	}
+
+	.section-image {
+		max-width: 150px;
+		height: auto;
+	}
+
+	.heroes-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.hero-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		border-top: 3px solid #4a7c2c;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.hero-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	.hero-card h3 {
+		color: #2d5016;
+		margin: 0 0 1rem;
+		font-size: 1.5rem;
+		text-align: center;
+		border-bottom: 2px solid #8b6f47;
+		padding-bottom: 0.5rem;
+	}
+
+	.hero-stats {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	.stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0.75rem;
+		background: #f9f7f4;
+		border-radius: 6px;
+	}
+
+	.stat-label {
+		font-size: 0.85rem;
+		color: #666;
+		margin-bottom: 0.25rem;
+		font-weight: 600;
+	}
+
+	.stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #2d5016;
+	}
+
 	.info-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -128,6 +381,32 @@ import Layout from '../layouts/Layout.astro';
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 		text-align: center;
 		border-top: 3px solid #8b6f47;
+		position: relative;
+		overflow: hidden;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+	.info-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: 
+			radial-gradient(circle at center, rgba(74, 124, 44, 0.05) 0%, transparent 70%);
+		opacity: 0;
+		transition: opacity 0.2s;
+		pointer-events: none;
+	}
+
+	.info-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	.info-card:hover::before {
+		opacity: 1;
 	}
 
 	.info-card h3 {
@@ -168,6 +447,27 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	@media (max-width: 768px) {
+		.hero {
+			flex-direction: column;
+			padding: 2rem 1rem;
+		}
+
+		.hero-content {
+			order: 1;
+		}
+
+		.hero-image {
+			order: 2;
+		}
+
+		.hero-logo {
+			max-width: 150px;
+		}
+
+		.fellowship-image {
+			max-width: 200px;
+		}
+
 		.hero h1 {
 			font-size: 2rem;
 		}
@@ -178,6 +478,230 @@ import Layout from '../layouts/Layout.astro';
 
 		.intro {
 			padding: 1.5rem;
+		}
+
+		.heroes-grid {
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+			gap: 1rem;
+		}
+
+		.hero-card {
+			padding: 1rem;
+		}
+
+		.hero-card h3 {
+			font-size: 1.25rem;
+		}
+
+		.stat-value {
+			font-size: 1.25rem;
+		}
+
+		.section-image {
+			max-width: 100px;
+		}
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.back-link {
+		display: inline-block;
+		color: #8b6f47;
+		text-decoration: none;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		transition: color 0.2s;
+	}
+
+	.back-link:hover {
+		color: #6b5537;
+	}
+
+	.page-header h1 {
+		font-size: 2.5rem;
+		color: #2d5016;
+		margin: 0.5rem 0;
+	}
+
+	.page-header p {
+		color: #666;
+		font-size: 1.1rem;
+	}
+
+	.timeline-container {
+		background: white;
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.instructions {
+		background: #fff8e1;
+		border: 2px solid #f9d84a;
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.instructions h3 {
+		margin-top: 0;
+		color: #8b6f47;
+		font-size: 1.25rem;
+	}
+
+	.instructions p {
+		margin-bottom: 0;
+		color: #666;
+	}
+
+	.instructions code {
+		background: rgba(0, 0, 0, 0.05);
+		padding: 2px 6px;
+		border-radius: 4px;
+		font-family: monospace;
+	}
+
+	.timeline {
+		position: relative;
+		padding-left: 3rem;
+	}
+
+	.timeline::before {
+		content: '';
+		position: absolute;
+		left: 1rem;
+		top: 0;
+		bottom: 0;
+		width: 3px;
+		background: linear-gradient(180deg, #8b6f47 0%, #d4c4a1 100%);
+	}
+
+	.timeline-item {
+		position: relative;
+		margin-bottom: 3rem;
+	}
+
+	.timeline-marker {
+		position: absolute;
+		left: -2.5rem;
+		top: 0.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+		background: white;
+		border: 4px solid #8b6f47;
+		box-shadow: 0 0 0 4px white;
+	}
+
+	.timeline-item.completed .timeline-marker {
+		background: #4a7c2c;
+		border-color: #4a7c2c;
+	}
+
+	.timeline-item.upcoming .timeline-marker {
+		background: white;
+		border-color: #d4c4a1;
+	}
+
+	.timeline-content {
+		background: #f9f7f4;
+		border-radius: 8px;
+		padding: 1.5rem;
+		border-left: 4px solid #8b6f47;
+	}
+
+	.timeline-item.upcoming .timeline-content {
+		border-left-color: #d4c4a1;
+	}
+
+	.timeline-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 1rem;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.timeline-header h3 {
+		margin: 0;
+		color: #2d5016;
+		font-size: 1.5rem;
+	}
+
+	.date {
+		color: #8b6f47;
+		font-weight: 600;
+		font-style: italic;
+	}
+
+	.session-details {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.session-details h4 {
+		margin: 0 0 0.5rem;
+		color: #4a7c2c;
+		font-size: 1.1rem;
+	}
+
+	.heroes ul,
+	.rewards ul {
+		margin: 0;
+		padding-left: 1.5rem;
+		color: #555;
+	}
+
+	.heroes li,
+	.rewards li {
+		margin-bottom: 0.25rem;
+	}
+
+	.outcome p {
+		margin: 0;
+		color: #555;
+		line-height: 1.7;
+	}
+
+	.upcoming-text {
+		color: #999;
+		font-style: italic;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.page-header h1 {
+			font-size: 2rem;
+		}
+
+		.timeline {
+			padding-left: 2rem;
+		}
+
+		.timeline::before {
+			left: 0.5rem;
+		}
+
+		.timeline-marker {
+			left: -1.75rem;
+		}
+
+		.timeline-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.instructions {
+			padding: 1rem;
+		}
+
+		.timeline-container {
+			padding: 1rem;
 		}
 	}
 </style>
