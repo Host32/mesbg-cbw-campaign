@@ -132,6 +132,14 @@ const fellowshipHeroes = [
 								</ul>
 							</div>
 						</div>
+						<div class="scenario-images">
+							<img src="/mesbg-cbw-campaign/pictures/01-1.jpeg" alt="Scenario 1 Image 1" />
+							<img src="/mesbg-cbw-campaign/pictures/01-2.jpeg" alt="Scenario 1 Image 2" />
+							<img src="/mesbg-cbw-campaign/pictures/01-3.jpeg" alt="Scenario 1 Image 3" />
+							<img src="/mesbg-cbw-campaign/pictures/01-4.jpeg" alt="Scenario 1 Image 4" />
+							<img src="/mesbg-cbw-campaign/pictures/01-5.jpeg" alt="Scenario 1 Image 5" />
+							<img src="/mesbg-cbw-campaign/pictures/01-6.jpeg" alt="Scenario 1 Image 6" />
+						</div>
 					</div>
 				</div>
 
@@ -166,6 +174,11 @@ const fellowshipHeroes = [
 								</ul>
 							</div>
 						</div>
+						<div class="scenario-images">
+							<img src="/mesbg-cbw-campaign/pictures/02-1.jpeg" alt="Scenario 2 Image 1" />
+							<img src="/mesbg-cbw-campaign/pictures/02-2.jpeg" alt="Scenario 2 Image 2" />
+							<img src="/mesbg-cbw-campaign/pictures/02-3.jpeg" alt="Scenario 2 Image 3" />
+						</div>
 					</div>
 				</div>
 
@@ -184,6 +197,14 @@ const fellowshipHeroes = [
 			</div>
 		</div>
 	</main>
+
+	<div id="lightbox-modal" class="lightbox-modal">
+		<span class="close">&times;</span>
+		<button class="prev">&lt;</button>
+		<button class="next">&gt;</button>
+		<img class="lightbox-content" id="lightbox-img" alt="">
+	</div>
+
 </Layout>
 
 <style>
@@ -486,6 +507,10 @@ const fellowshipHeroes = [
 	}
 
 	@media (max-width: 768px) {
+		main {
+			padding: 1rem 0.5rem;
+		}
+
 		.hero {
 			flex-direction: column;
 			padding: 2rem 1rem;
@@ -652,6 +677,22 @@ const fellowshipHeroes = [
 		border-left: 4px solid #8b6f47;
 	}
 
+	.scenario-images {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.scenario-images img {
+		cursor: pointer;
+		width: 150px;
+		height: 150px;
+		object-fit: cover;
+		border-radius: 4px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
 	.timeline-item.upcoming .timeline-content {
 		border-left-color: #d4c4a1;
 	}
@@ -719,15 +760,19 @@ const fellowshipHeroes = [
 		}
 
 		.timeline {
-			padding-left: 2rem;
+			padding-left: 1rem;
 		}
 
 		.timeline::before {
-			left: 0.5rem;
+			left: 0.25rem;
 		}
 
 		.timeline-marker {
-			left: -1.75rem;
+			left: -1rem;
+		}
+
+		.timeline-item {
+			margin-bottom: 2rem;
 		}
 
 		.timeline-header {
@@ -740,7 +785,122 @@ const fellowshipHeroes = [
 		}
 
 		.timeline-container {
-			padding: 1rem;
+			padding: 0.5rem;
 		}
 	}
+
+	.lightbox-modal {
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		padding-top: 100px;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.9);
+	}
+
+	.lightbox-content {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 700px;
+	}
+
+	.close {
+		position: absolute;
+		top: 15px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		transition: 0.3s;
+		cursor: pointer;
+	}
+
+	.close:hover,
+	.close:focus {
+		color: #bbb;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.prev,
+	.next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+		border: none;
+		font-size: 30px;
+		padding: 10px;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: background 0.3s;
+	}
+
+	.prev:hover,
+	.next:hover {
+		background: rgba(0, 0, 0, 0.8);
+	}
+
+	.prev {
+		left: 15px;
+	}
+
+	.next {
+		right: 15px;
+	}
 </style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const modal = document.getElementById('lightbox-modal') as HTMLElement;
+		const modalImg = document.getElementById('lightbox-img') as HTMLImageElement;
+		const closeBtn = document.querySelector('.close') as HTMLElement;
+		const prevBtn = document.querySelector('.prev') as HTMLButtonElement;
+		const nextBtn = document.querySelector('.next') as HTMLButtonElement;
+
+		let currentImages: HTMLImageElement[] = [];
+		let currentIndex = 0;
+
+		const showImage = (index: number) => {
+			if (index >= 0 && index < currentImages.length) {
+				currentIndex = index;
+				modalImg.src = currentImages[index].src;
+				modalImg.alt = currentImages[index].alt;
+			}
+		};
+
+		document.querySelectorAll<HTMLImageElement>('.scenario-images img').forEach(img => {
+			img.addEventListener('click', () => {
+				const scenarioImages = img.closest('.scenario-images') as HTMLElement;
+				currentImages = Array.from(scenarioImages.querySelectorAll<HTMLImageElement>('img'));
+				currentIndex = currentImages.indexOf(img);
+				modal.style.display = 'block';
+				showImage(currentIndex);
+			});
+		});
+
+		prevBtn.onclick = () => {
+			showImage(currentIndex - 1);
+		};
+
+		nextBtn.onclick = () => {
+			showImage(currentIndex + 1);
+		};
+
+		closeBtn.onclick = () => {
+			modal.style.display = 'none';
+		};
+
+		modal.onclick = (e) => {
+			if (e.target === modal) {
+				modal.style.display = 'none';
+			}
+		};
+	});
+</script>
