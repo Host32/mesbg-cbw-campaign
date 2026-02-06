@@ -5,7 +5,7 @@ const fellowshipHeroes = [
 	{ name: "Frodo", wounds: '2/2', might: '2/2', will: '3/3', fate: '3/3' },
 	{ name: "Sam", wounds: '2/2', might: '2/2', will:'2/2', fate: '2/2' },
 	{ name: "Merry", wounds: '1/1', might: '0/0', will: '0/0', fate: '2/2'},
-	{ name: "Pippin", wounds: '1/1', might: '0/0', will: '0/0', fate: '2/2' },
+	{ name: "Pippin", wounds: '0/1', might: '0/0', will: '0/0', fate: '0/2', dead: true },
 	{ name: "Aragorn", wounds: '3/3', might: '3/3', will: '3/3', fate: '3/3' },
 	{ name: "Legolas", wounds: '2/2', might: '3/3', will: '2/2', fate: '3/3' },
 	{ name: "Gimli", wounds: '2/2', might: '3/3', will: '2/2', fate: '3/3' },
@@ -53,7 +53,7 @@ const fellowshipHeroes = [
 				</div>
 				<div class="info-card">
 					<h3>Próxima Sessão</h3>
-					<p>Quinta-feira - 05/02/2026</p>
+					<p>a definir</p>
 				</div>
 				<div class="info-card">
 					<h3>Total de Cenários</h3>
@@ -69,7 +69,7 @@ const fellowshipHeroes = [
 			</div>
 			<div class="heroes-grid">
 				{fellowshipHeroes.map((hero) => (
-					<div class="hero-card">
+					<div class={`hero-card ${hero.dead ? 'dead' : ''}`}>
 						<h3>{hero.name}</h3>
 						<div class="hero-stats">
 							<div class="stat">
@@ -187,7 +187,152 @@ const fellowshipHeroes = [
 					<div class="timeline-content">
 						<div class="timeline-header">
 							<h3>Cenário 3 - BUCKLEBERRY FERRY</h3>
+							<span class="date">05 de fevereiro de 2026</span>
+						</div>
+						<div class="session-details">
+							<div class="heroes">
+								<h4>Heróis</h4>
+								<ul>
+									<li>Frodo Baggins (Ivan)</li>	
+									<li>Samwise Gamgee (Guilherme)</li>
+									<li>Meriadoc Brandybuck (Ivan)</li>
+									<li>Peregrin Took (Guilherme)</li>
+								</ul>
+							</div>
+							<div class="outcome">
+								<h4>Resultado</h4>
+								<p>Sam e Pippin resolveram avançar pelo centro do caminho chamando a atenção dos Nazgul, enquanto Frodo e Merry se esgueiravam pela lateral. Na primeira investida dos Nazgul, Pippin não conseguiu contar com a sorte do destino e foi abatido, Sam, por ouro lado, fez um ótimo trabalho espantando e atordoando os espectros, com sua frigideira. Apesar de Merry dar cobertura para Frodo, os espectros conseguiram o compelir a colocar o anel. Frodo ficou muito tempo sob poder do anel sem forças para remove-lo enquanto os Nazgul feriam seus amigos em uma exaustiva batalha. Depois de muito insistir, já na sua última gota de energia, Frodo consegue enfim remover o anel, e junto de Sam e Merry venceram a ultima investida derrotando o último Nazgul.
+								</p>
+							</div>
+							<div class="rewards">
+								<h4>Recompensas e Ferimentos</h4>
+								<ul>
+									<li>Herói da aventura: Sam que fez um excelente trabalho com sua frigideira;</li>
+									<li>Tolo da vez: Ninguém, todos cumpriram seu papel (apesar de que Pippin não estava destinado a sobrevier);</li>
+									<li>Após a cansativa batalha, os Hobbits enfim chegaram à Crickhollow, um ponto de descanso onde todos puderam se recuperar por completo;</li>
+									<li>Graças à vitória, No cenário "THE OLD FOREST", os Hobbits podem começar em até 3" do centro da borda oeste do tabuleiro.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="scenario-images">
+							<img src="/mesbg-cbw-campaign/pictures/03-1.jpeg" alt="Scenario 3 Image 1" />
+							<img src="/mesbg-cbw-campaign/pictures/03-2.jpeg" alt="Scenario 3 Image 2" />
+							<img src="/mesbg-cbw-campaign/pictures/03-3.jpeg" alt="Scenario 3 Image 3" />
+							<img src="/mesbg-cbw-campaign/pictures/03-4.jpeg" alt="Scenario 3 Image 4" />
+							<img src="/mesbg-cbw-campaign/pictures/03-5.jpeg" alt="Scenario 3 Image 5" />
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item upcoming">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Cenário 4 - CRICKHOLLOW</h3>
 							<span class="date">5 de Fevereiro de 2026</span>
+						</div>
+						<div class="session-details">
+							<p>Ponto de descanso; Todos podem se recuperar por completo</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item upcoming">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Cenário 5 - THE OLD FOREST</h3>
+							<span class="date">05 de fevereiro de 2026</span>
+						</div>
+						<div class="session-details">
+							<div class="heroes">
+								<h4>Heróis</h4>
+								<ul>
+									<li>Frodo Baggins (Guilherme)</li>	
+									<li>Samwise Gamgee (Ivan)</li>
+									<li>Meriadoc Brandybuck (Guilherme)</li>
+									<li>Peregrin Took (Ivan)</li>
+								</ul>
+							</div>
+							<div class="outcome">
+								<h4>Resultado</h4>
+								<p>Os Hobbits foram cercados por árvores que se moviam impedindo a passagem, eles tentaram fugir, mas as árvores os perseguiam, depois de um grande sufoco empurrando árvores e mais árvores e mais árvores pra longe eles conseguiram atravessar a floresta sem nenhuma baixa, mas Frodo esgotou todo seu poder e destino e ainda sim sofreu 1 ferimento; Merry usou todo seu destino enquanto Pippin e Sam gastaram apenas 1 destino cada.
+								</p>
+							</div>
+							<div class="rewards">
+								<h4>Recompensas e Ferimentos</h4>
+								<ul>
+									<li>Herói da aventura: Todos fizeram um excelente trabalho em equipe, ninguém se destacou perante os demais;</li>
+									<li>Tolo da vez: Ninguém, todos cumpriram seu papel;</li>
+									<li>Ao sairem da floresta, conseguiram recuperar o fôlego, Frodo recuperou 1 ponto de poder, merry recuperou 1 Destino e Sam e Pippin se recuperaram por completo;</li>
+									<li>Graças à vitória, No cenário "FOG ON THE BARROW-DOWNS", Tom Bombadil chegará com uma rolagem de 4+ em vez de 5+.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="scenario-images">
+							<img src="/mesbg-cbw-campaign/pictures/05-1.jpeg" alt="Scenario 5 Image 1" />
+							<img src="/mesbg-cbw-campaign/pictures/05-2.jpeg" alt="Scenario 5 Image 2" />
+							<img src="/mesbg-cbw-campaign/pictures/05-3.jpeg" alt="Scenario 5 Image 3" />
+							<img src="/mesbg-cbw-campaign/pictures/05-4.jpeg" alt="Scenario 5 Image 4" />
+							<img src="/mesbg-cbw-campaign/pictures/05-5.jpeg" alt="Scenario 5 Image 5" />
+							<img src="/mesbg-cbw-campaign/pictures/05-6.jpeg" alt="Scenario 5 Image 6" />
+						</div>
+					</div>
+				</div>
+
+
+				<div class="timeline-item upcoming">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Cenário 6 - FOG ON THE BARROW-DOWNS</h3>
+							<span class="date">05 de fevereiro de 2026</span>
+						</div>
+						<div class="session-details">
+							<div class="heroes">
+								<h4>Heróis</h4>
+								<ul>
+									<li>Frodo Baggins (Guilherme)</li>	
+									<li>Samwise Gamgee (Ivan)</li>
+									<li>Meriadoc Brandybuck (Guilherme)</li>
+									<li>Peregrin Took (Ivan)</li>
+									<li>Tom Bombadil (Guilherme)</li>
+									<li>Goldberry (Ivan)</li>
+								</ul>
+							</div>
+							<div class="outcome">
+								<h4>Resultado</h4>
+								<p>Sabendo das histórias sobre Tom Bombadil, os Hobbits decidiram avançar mais de vagar cantando sua canção caso algo sobrenatural acontecesse, o que acabou sendo uma ótima ideia pois, quando o primeiro espírito apareceu, Tom Bombadil já foi alertado e chegou para ajudar, seguido rapidamente por Goldberry que veio logo atrás dele. Os Hobbits tentaram distrair os espíritos enquanto Tom Bombadil e Goldberry os derrotavam, apesar disso, Pippin foi capturado e levado para a tumba, infelizmente ninguém conseguiu resgatá-lo e ele acabou morrendo.
+								</p>
+							</div>
+							<div class="rewards">
+								<h4>Recompensas e Ferimentos</h4>
+								<ul>
+									<li>Herói da aventura: Tom Bombadil que com suas canções acabou rapidamente com os espíritos;</li>
+									<li>Tolo da vez: Ninguém, todos cumpriram seu papel;</li>
+									<li>Pippin não conseguiu resistir ao sacíficio feito pelos espíritos e morreu definitivamente; Seus amigos seguiram tristes até a casa de Tom Bombadil, um ponto de descanso onde puderam se recuperar por completo;</li>
+									<li>Graças à amarga vitória, no cenário "NAZGÛL IN BREE", Frodo pode rolar novamente seu primeiro teste de Coragem falho para a regra especial "Lure of the Ring".</li>
+								</ul>
+							</div>
+						</div>
+						<div class="scenario-images">
+							<img src="/mesbg-cbw-campaign/pictures/06-1.jpeg" alt="Scenario 6 Image 1" />
+							<img src="/mesbg-cbw-campaign/pictures/06-2.jpeg" alt="Scenario 6 Image 2" />
+							<img src="/mesbg-cbw-campaign/pictures/06-3.jpeg" alt="Scenario 6 Image 3" />
+							<img src="/mesbg-cbw-campaign/pictures/06-4.jpeg" alt="Scenario 6 Image 4" />
+							<img src="/mesbg-cbw-campaign/pictures/06-5.jpeg" alt="Scenario 6 Image 5" />
+							<img src="/mesbg-cbw-campaign/pictures/06-6.jpeg" alt="Scenario 6 Image 6" />
+							<img src="/mesbg-cbw-campaign/pictures/06-7.jpeg" alt="Scenario 6 Image 7" />
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item upcoming">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Cenário 7 - NAZGÛL IN BREE</h3>
+							<span class="date">A definir</span>
 						</div>
 						<div class="session-details">
 							<p class="upcoming-text">Cenário próximo</p>
@@ -391,13 +536,33 @@ const fellowshipHeroes = [
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 	}
 
-	.hero-card h3 {
-		color: #2d5016;
-		margin: 0 0 1rem;
-		font-size: 1.5rem;
+	.hero-card.dead {
+		opacity: 0.6;
+		background: linear-gradient(135deg, #f9f7f4 0%, #e8e6e1 100%);
+		border-top-color: #8b6f47;
+		position: relative;
+	}
+
+	.hero-card.dead::after {
+		content: '✗ ELIMINADO';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: rgba(139, 111, 71, 0.9);
+		color: #f4e4c1;
+		padding: 0.5rem;
 		text-align: center;
-		border-bottom: 2px solid #8b6f47;
-		padding-bottom: 0.5rem;
+		font-weight: 700;
+		font-size: 0.9rem;
+		border-radius: 6px 6px 0 0;
+		letter-spacing: 1px;
+	}
+
+	.hero-card.dead h3 {
+		color: #999;
+		text-decoration: line-through;
+		margin-top: 2rem;
 	}
 
 	.hero-stats {
